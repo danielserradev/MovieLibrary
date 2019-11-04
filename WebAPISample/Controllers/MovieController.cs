@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 using WebAPISample.Models;
 
@@ -16,38 +17,52 @@ namespace WebAPISample.Controllers
             context = new ApplicationDbContext();
         }
         // GET api/values
-        public IEnumerable<Movie> Get()
+        public async Task<IHttpActionResult> Get()
         {
             // Retrieve all movies from db logic
-
-            return context.Movies.ToList().AsEnumerable();
+            var movies = context.Movies.ToList();
+            return Ok(movies);
         }
-
+        
         // GET api/values/5
-        public string Get(int id)
+        public async Task<IHttpActionResult> Get(int id)
         {
             // Retrieve movie by id from db logic
-            var movie = context.Movies.Where(m => m.MovieId == id).SingleOrDefault();
-            return "value";
+            var movie = context.Movies.Find(id);
+            if(movie == null)
+            {
+                return NotFound();
+            }
+            return Ok(movie);
         }
 
         // POST api/values
-        public void Post([FromBody]Movie value)
+        public async Task<IHttpActionResult> Post([FromBody]Movie value)
         {
             context.Movies.Add(value);
+            var movie = await context.SaveChangesAsync();
+
+
             // Create movie in db logic
+            return Ok(value);
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]Movie value)
+        public async Task<IHttpActionResult> Put(int id, [FromBody]Movie value)
         {
-            var movieToUpdate = context.Movies.Where(m => m.MovieId == id).FirstOrDefault();
-            movieToUpdate.Title = value.Title;
-            movieToUpdate.Director = value.Director;
-            movieToUpdate.Genre = value.Genre;
-            context.SaveChanges();
+            var movieToEdit = context.Movies.Find(value.MovieId);
 
+            movieToEdit.Director = value.Director;
+            movieToEdit.Title = value.Title;
+            movieToEdit.Genre = value.Genre;
+
+            var movie = await context.SaveChangesAsync();
+
+
+            
+            return Ok(movie);
             // Update movie in db logic
+            
         }
 
         // DELETE api/values/5
