@@ -226,15 +226,12 @@
     <Compile Include="Migrations\201911041629143_genre.Designer.cs">
       <DependentUpon>201911041629143_genre.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Migrations\201911041943038_migration1.cs" />
-    <Compile Include="Migrations\201911041943038_migration1.Designer.cs">
-      <DependentUpon>201911041943038_migration1.cs</DependentUpon>
-=======
+
+
     <Compile Include="Migrations\201911041732405_data.cs" />
     <Compile Include="Migrations\201911041732405_data.Designer.cs">
       <DependentUpon>201911041732405_data.cs</DependentUpon>
->>>>>>> 3f5dd59347fb71d4c809fdbc8b9931261aa99216
+
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -359,13 +356,11 @@
     <EmbeddedResource Include="Migrations\201911041629143_genre.resx">
       <DependentUpon>201911041629143_genre.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Migrations\201911041943038_migration1.resx">
-      <DependentUpon>201911041943038_migration1.cs</DependentUpon>
-=======
+
+
     <EmbeddedResource Include="Migrations\201911041732405_data.resx">
       <DependentUpon>201911041732405_data.cs</DependentUpon>
->>>>>>> 3f5dd59347fb71d4c809fdbc8b9931261aa99216
+
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
