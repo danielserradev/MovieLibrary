@@ -8,7 +8,6 @@ namespace WebAPISample.Models
 {
     public class Movie
     {
-        //hello
         public int MovieId { get; set; }
 
         [Display(Name = "Movie Title")]
