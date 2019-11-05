@@ -20,7 +20,7 @@ namespace WebAPISample
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap.min-darkly (1).css",
                       "~/Content/site.css"));
         }
     }
