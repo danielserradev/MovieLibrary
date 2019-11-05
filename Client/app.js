@@ -31,6 +31,7 @@ function getData( e ){
     type: 'get',
     contentType: 'application/json',
     success: function( data, textStatus, jQxhr ){
+      
         console.log(data);
         $("p").append(data);
     },
@@ -50,6 +51,9 @@ function getSpecificData( e ){
     type: 'get',
     contentType: 'application/json',
     success: function( data, textStatus, jQxhr ){
+      $(".movies").append(data.Title + " ");
+      $(".movies").append(data.Director + " ");
+      $(".movies").append(data.Genre);
         console.log(data);
     },
     error: function( jqXhr, textStatus, errorThrown ){
