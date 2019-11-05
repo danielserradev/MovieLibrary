@@ -40,18 +40,15 @@ function getData( e ){
       $("#allMovies").append("<br />");
       for(i=0; i<data.length; i++){
         var btn = document.createElement("BUTTON");
-        btn.innerHTML = "Update";
+        //btn = data[i].MovieId;
+        btn.innerHTML = "Update Movie";
         $("#allMovies").append(data[i].Title + " | ");
         $("#allMovies").append(data[i].Director + " | ");
         $("#allMovies").append(data[i].Genre + " | ");
         $("#allMovies").append(btn);
         $("#allMovies").append("<br />");
         $("#allMovies").append("<br />");
-
-
       }
-
-
     },
     error: function( jqXhr, textStatus, errorThrown ){
         console.log("Didnt work" );
@@ -63,7 +60,7 @@ $("getData").submit( getData );
 
 function getSpecificData( e ){
   var movieId = $("#movieId").val();
-  //var movieId = document.getElementById('movieId').value;
+
   $.ajax({
     url: 'https://localhost:44352/api/movie/'+ movieId,
     dataType: 'json',
@@ -81,3 +78,21 @@ function getSpecificData( e ){
   });
 }
 $("getSpecificData").submit(getSpecificData);
+
+function updateMovie( e ){
+  var movieId = $("#movieId").val();
+  $.ajax({
+    url: 'https://localhost:44352/api/movie/'+ movieId,
+    dataType: 'json',
+    type: 'put',
+    contentType: 'application/json',
+    success: function( data, textStatus, jQxhr ){
+      console.log("working");
+
+    },
+    error: function( jqXhr, textStatus, errorThrown ){
+        console.log("Didnt work" );
+    }
+  });
+}
+$("updateMovie").submit(updateMovie);
