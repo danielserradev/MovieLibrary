@@ -14,5 +14,10 @@ namespace WebAPISample.Controllers
 
             return View();
         }
+        public ActionResult MovieSearch()
+        {
+            ViewBag.Title = "Search Data Base";
+            return View();
+        }
     }
 }
