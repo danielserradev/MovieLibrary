@@ -16,7 +16,7 @@ namespace WebAPISample.Controllers
         }
         public ActionResult MovieSearch()
         {
-            ViewBag.Title = "Search Data Base";
+            ViewBag.Title = "MovieSearch";
             return View();
         }
     }
