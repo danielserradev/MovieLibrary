@@ -1,0 +1,25 @@
+body {
+	background-color: black;
+	color: green;	
+	background-image: url( 'library image.jpg');
+	background-repeat: no-repeat;
+  	background-size: auto;
+  	background-position: center;
+	 font-weight: bolder;
+	h4	{
+	 		background-color: black
+	 		color:green;
+	 	}
+	 
+}
+footer{
+ 
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+  	background-color: black;
+  	color:green;
+  	font-size: 500;
+  	font-weight: bolder; 
+
+}
