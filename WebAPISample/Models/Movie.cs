@@ -18,5 +18,6 @@ namespace WebAPISample.Models
 
         [Display(Name = "Movie Genre")]
         public string Genre { get; set; }
+        
     }
 }
