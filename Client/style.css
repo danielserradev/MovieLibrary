@@ -1,25 +1,35 @@
+head{
+
+}
+
 body {
-	background-color: black;
-	color: green;	
+	background-color: gold;
+	color: black;	
 	background-image: url( 'library image.jpg');
 	background-repeat: no-repeat;
   	background-size: auto;
+  	background-width: 100%;
   	background-position: center;
+  	background-border: 5px solid;
 	 font-weight: bolder;
-	h4	{
-	 		background-color: black
-	 		color:green;
-	 	}
-	 
+
 }
 footer{
  
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-  	background-color: black;
-  	color:green;
-  	font-size: 500;
+  	background-color: gold;
+  	color:black;
+  	font-size: 25px;
   	font-weight: bolder; 
+  	max-height: 50px;
+  	margin-top: 50px;
+
+
+}
+h1{
+	color: yellow;
+	align-content: center;
 
 }
