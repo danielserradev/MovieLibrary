@@ -45,7 +45,7 @@ function getData( e ){
         $("#allMovies").append(data[i].Title + " | ");
         $("#allMovies").append(data[i].Director + " | ");
         $("#allMovies").append(data[i].Genre + " | ");
-        $("#allMovies").append(btn);
+        $("#allMovies").append("<button onClick='updateMovie(" + data[i].movieId + ")'>Update</button>");
         $("#allMovies").append("<br />");
         $("#allMovies").append("<br />");
       }
@@ -60,16 +60,15 @@ $("getData").submit( getData );
 
 function getSpecificData( e ){
   var movieId = $("#movieId").val();
-
   $.ajax({
     url: 'https://localhost:44352/api/movie/'+ movieId,
     dataType: 'json',
     type: 'get',
     contentType: 'application/json',
     success: function( data, textStatus, jQxhr ){
-      $(".movie").append(data.Title + " ");
-      $(".movie").append(data.Director + " ");
-      $(".movie").append(data.Genre);
+      $("#movie").append(data.Title + " ");
+      $("#movie").append(data.Director + " ");
+      $("#movie").append(data.Genre);
         console.log(data);
     },
     error: function( jqXhr, textStatus, errorThrown ){
@@ -80,12 +79,18 @@ function getSpecificData( e ){
 $("getSpecificData").submit(getSpecificData);
 
 function updateMovie( e ){
-  var movieId = $("#movieId").val();
+  var dict = {
+    Title : this["title"].value,
+    Director: this["director"].value,
+    Genre: this["genre"].value
+  };
+  var movieId = $("#updateId").val();
   $.ajax({
     url: 'https://localhost:44352/api/movie/'+ movieId,
     dataType: 'json',
     type: 'put',
     contentType: 'application/json',
+    data: JSON.stringify(dict),
     success: function( data, textStatus, jQxhr ){
       console.log("working");
 
@@ -95,4 +100,4 @@ function updateMovie( e ){
     }
   });
 }
-$("updateMovie").submit(updateMovie);
+$("edit-form").submit(updateMovie);

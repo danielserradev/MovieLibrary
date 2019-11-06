@@ -18,7 +18,7 @@
 
 <form id="create-form">
   <h4>Enter New Movies</h4>
-  <input type="text" name="title" placeholder="Title" />
+  <input type="text" name="title" place      holder="Title" />
   <input type="text" name="director" placeholder="Director" />
   <input type="text" name="genre" placeholder="Genre" />
 
@@ -26,6 +26,14 @@
 </form>
 <br>
 
+<form id="edit-form">
+  <h4>Update movies</h4>
+  <input type="text" name="id" placeholder="MovieId" />
+    <input type="text" name="title" placeholder="Title" />
+      <input type="text" name="director" placeholder="Director" />
+        <input type="text" name="genre" placeholder="Genre" />
+          <button onclick="updateMovie()">Update</button>
+</form>
 
 
 <h4>Get all the movies</h4>
@@ -38,7 +46,7 @@
   <h4>Get a specific movie by id</h4>
   <input id="movieId" type="text" name="id" placeholder="ID" />
     <button onclick="getSpecificData()">Search</button>
-    <div class="movie">
+    <div id="movie">
     </div>
 
 
