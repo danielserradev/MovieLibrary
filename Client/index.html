@@ -3,47 +3,38 @@
 <head>
     <title>jQuery AJAX POST Form</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
 </head>
+<h1>Movie Library</h1>
 <body>
 
-<div id="response">
-    <pre></pre>
-</div>
-
-<form id="create-form">
-  <h4>Enter New Movies</h4>
-  <input type="text" name="title" placeholder="Title" />
-  <input type="text" name="director" placeholder="Director" />
-  <input type="text" name="genre" placeholder="Genre" />
-
-    <button type="submit">Submit</button>
-</form>
-<br>
-
-<form id="edit-form">
+      <form id="create-form">
+          <h4>Enter New Movies</h4>
+          <input type="text" name="title" placeholder="Title" />
+          <input type="text" name="director" placeholder="Director" />
+          <input type="text" name="genre" placeholder="Genre" />
+        
+            <button type="submit">Submit</button>
+        </form>
+       <form id="updateMovie">
   <h4>Update movies</h4>
-  <input type="text" name="id" placeholder="MovieId" />
-    <input type="text" name="title" placeholder="Title" />
-      <input type="text" name="director" placeholder="Director" />
-        <input type="text" name="genre" placeholder="Genre" />
-          <button onclick="updateMovie()">Update</button>
+  <input type="text" id="updateId" name="id" placeholder="MovieId" />
+    <input type="text" id="title" name="title" placeholder="Title" />
+      <input type="text" id="director" name= "director" placeholder="Director" />
+        <input type="text" id="genre" name="genre" placeholder="Genre" />
+          <input type="button" onclick="updateMovie()" value="Update"></input>
 </form>
-
-
+    
+<br>
 <h4>Get all the movies</h4>
   <button onclick="getData()">Search</button>
-  <br>
-  <br>
   <div id="allMovies">
-  </div>
-
-  <h4>Get a specific movie by id</h4>
+    </div>
+<h4>Get a specific movie by id</h4>
   <input id="movieId" type="text" name="id" placeholder="ID" />
     <button onclick="getSpecificData()">Search</button>
     <div id="movie">
     </div>
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="./app.js"></script>
@@ -53,4 +44,4 @@
 <center>Made by Daniel Serra and David Williams
 </center>
 </footer>
-</html>
+
